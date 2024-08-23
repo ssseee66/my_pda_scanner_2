@@ -103,7 +103,8 @@ public class MyPdaScannerPlugin implements FlutterPlugin {
                     data_map.put("qr_data", qr_data);
                     data_map.put("image_data", image_data);
                     data_map.put("ocr_data", ocr_data);
-                    String data_amp_str = JSONObject.toJSONString(data_map);
+                    JSONObject json = new JSONObject(data_map);
+                    String data_amp_str = json.toString();
                     events.success(data_amp_str);
                 }
             }
